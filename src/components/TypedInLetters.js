@@ -15,12 +15,11 @@ class TypedInLetters extends Component{
     componentDidMount(){
         var helpfullString = "";
         for( var i = 0 ; i < this.state.answer.length ; i++ ){
-           if(this.state.answer.charAt(i) === " "){
+           if(this.state.answer.charAt(i) === " ")
             helpfullString += " ";
-           }
-           else{
+           else
             helpfullString += "_";  
-           }
+           
 
         }
         this.setState({
@@ -28,28 +27,41 @@ class TypedInLetters extends Component{
         });
         
     }
-    
-    changeLetterInAnswerLook(){
+
+    componentWillReceiveProps(nextProps){
+        this.changeLetterInAnswerLook(nextProps.newCharacter)        
+    }
+
+   
+    changeLetterInAnswerLook(nextCharacter){
         var helpfullString = this.state.answerLook;
 
         for( var i = 0 ; i < this.state.answerLook.length ; i++ )
-            if(this.state.answer.charAt(i) === this.props.newCharacter)
-             helpfullString = helpfullString.substr(0, i) + this.props.newCharacter + helpfullString.substr(i + 1 , this.state.answerLook.length);
+            if(this.state.answer.charAt(i) === nextCharacter)
+             helpfullString = helpfullString.substr(0, i) + nextCharacter + helpfullString.substr(i + 1 , this.state.answerLook.length);
+             console.log(helpfullString)
         this.setState({
                 answerLook: helpfullString
             });
+        
     }
 
-    componentWillReceiveProps(){
-        this.changeLetterInAnswerLook()
-    }
+
+
+    
 
     render(){
         return(
-            <p>{this.state.answerLook}</p>
+            <div>{this.state.answerLook}</div>
+            
         );
     }
 
 
 }
+
+class CounterOfMissings extends Component{
+    
+}
+
 export default TypedInLetters;

@@ -10,9 +10,7 @@ class App extends Component {
         <div className="Keyboard">
           <Keyboard />
         </div>
-        <div className="Answer">
-          
-         </div> 
+        
       </div>  
       
     );

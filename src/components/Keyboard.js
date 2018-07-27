@@ -52,9 +52,15 @@ class Keyboard extends Component{
         })
     }
 
-    createButton(myCharacter){
+    createButton(myCharacter, myKey){
         const singleButton = <button onClick={() => this.onPressedKey(myCharacter)} className="Single-character-button">{myCharacter}</button>
         return singleButton;
+    }
+
+    randSomeText(){
+        const someAnswers = ["Siała Baba Mak", "Nie wiedziała jak", "Dziadek wiedział nie powiedział", "A to było tak heh"];
+        return someAnswers[Math.floor(Math.random()*4)]
+
     }
 
     render(){
@@ -63,7 +69,9 @@ class Keyboard extends Component{
             <div className="Keyboard">
                {this.state.tableOfButtons}
             </div>
-            <TypedInLetters answer={"A B C D E E A A B D Ż Ź D S DQWE TYU".toUpperCase()} newCharacter={this.state.pressedKey}/>
+            <div className="Answer">
+            <TypedInLetters answer={this.randSomeText().toUpperCase()} newCharacter={this.state.pressedKey}/>
+            </div>
             </div>
         );
     }
