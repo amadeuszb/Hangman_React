@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  background: #242E78;
 }
 
 .App-logo {
@@ -21,7 +22,14 @@
 .App-intro {
   font-size: large;
 }
-
+.Keyboard{
+  margin: auto;
+  padding: auto;
+}
+.Answer{
+  margin: auto;
+  padding: auto;
+}
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }

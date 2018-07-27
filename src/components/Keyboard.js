@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
-import SingleCharacterButton from './SingleCharacterButton'
 import './Keyboard.css'
+import './SingleCharacterButton.css';
+import TypedInLetters from './TypedInLetters'
 
 class Keyboard extends Component{
     constructor(){
@@ -9,12 +10,13 @@ class Keyboard extends Component{
         this.fullfillTableOfCharacters = this.fullfillTableOfCharacters.bind(this);
         this.fullfillTableOfButtons = this.fullfillTableOfButtons.bind(this);
         this.createButton = this.createButton.bind(this);
-        
+        this.onPressedKey = this.onPressedKey.bind(this);
         const helpfullTable = this.fullfillTableOfCharacters();
 
         this.state = {
             tableOfCharacters: this.fullfillTableOfCharacters(),
-            tableOfButtons: this.fullfillTableOfButtons(helpfullTable)
+            tableOfButtons: this.fullfillTableOfButtons(helpfullTable),
+            pressedKey: ""
         }
     }
 
@@ -44,20 +46,30 @@ class Keyboard extends Component{
         return helpfullTable;
     }
 
+    onPressedKey(characterPressed){
+        this.setState({
+            pressedKey: characterPressed
+        })
+    }
+
     createButton(myCharacter){
-        const singleButton = <SingleCharacterButton character={myCharacter}/>//this.state.tableOfCharacters[number]}/>
+        const singleButton = <button onClick={() => this.onPressedKey(myCharacter)} className="Single-character-button">{myCharacter}</button>
         return singleButton;
     }
 
     render(){
         return(
+            <div>
             <div className="Keyboard">
                {this.state.tableOfButtons}
+            </div>
+            <TypedInLetters answer={"A B C D E E A A B D Ż Ź D S DQWE TYU".toUpperCase()} newCharacter={this.state.pressedKey}/>
             </div>
         );
     }
 
 }
-    
+
+
 
 export default Keyboard

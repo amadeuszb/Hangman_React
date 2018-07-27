@@ -11,6 +11,7 @@ class SingleCharacterButton extends Component{
     }
 
     returnMyCharacter(){
+        console.log(this.state.myCharacter);
         return this.state.myCharacter;
     }
     render(){

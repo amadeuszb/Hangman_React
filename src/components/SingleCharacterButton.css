@@ -1,12 +1,11 @@
 .Single-character-button {
-    background-color: firebrick; /* Green */
-    border: none;
-    color: white;
-    padding: 15px 20px;
-    text-align: center;
-    text-decoration: firebrick;
-    display: inline-block;
-    font-size: 20px;
-    height: 30px;
-    width: 30px;
+  width: 30px;
+	height: 30px;
+	text-align:center;
+	padding: 5px;
+	margin: 5px;
+	border: 3px solid gray;
+	float: left;
+	cursor: pointer;
+	border-radius: 15px;
   }
