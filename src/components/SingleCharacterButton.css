@@ -9,3 +9,8 @@
 	cursor: pointer;
 	border-radius: 15px;
 	}
+.Single-character-button:hover{
+	background-color: #222222;
+	color: white;
+	border: 3px solid white;
+}
