@@ -3,6 +3,7 @@ import './Keyboard.css'
 import './SingleCharacterButton.css';
 import TypedInLetters from './TypedInLetters'
 
+
 class Keyboard extends Component{
     constructor(){
         super();
@@ -59,8 +60,7 @@ class Keyboard extends Component{
 
     randSomeText(){
         const someAnswers = ["Siała Baba Mak", "Nie wiedziała jak", "Dziadek wiedział nie powiedział", "A to było tak heh"];
-        return someAnswers[Math.floor(Math.random()*4)]
-
+        return someAnswers[Math.floor(Math.random()*4)];
     }
 
     render(){
@@ -71,6 +71,7 @@ class Keyboard extends Component{
             </div>
             <div className="Answer">
             <TypedInLetters answer={this.randSomeText().toUpperCase()} newCharacter={this.state.pressedKey}/>
+            
             </div>
             </div>
         );

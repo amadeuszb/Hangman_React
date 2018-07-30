@@ -6,3 +6,12 @@
 .Answer{
     
 }
+.Typed-letters
+{
+	width: 900px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	text-align: center;
+	font-size: 48px;
+	min-height: 60px;
+}

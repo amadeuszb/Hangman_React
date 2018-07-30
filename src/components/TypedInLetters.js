@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import CounterOfAnswers from './CounterOfAnswers'
-
+import './Keyboard.css'
 class TypedInLetters extends Component{
     
     constructor(props){
@@ -46,14 +46,10 @@ class TypedInLetters extends Component{
         
     }
 
-
-
-    
-
     render(){
         return(
             <div>
-            <div>{this.state.answerLook}</div>
+            <div className="Typed-letters">{this.state.answerLook}</div>
             <CounterOfAnswers typedCharacter={this.props.newCharacter} correctString={this.props.answer}/>
             </div>
         );
