@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-
+import CounterOfAnswers from './CounterOfAnswers'
 
 class TypedInLetters extends Component{
     
@@ -52,16 +52,14 @@ class TypedInLetters extends Component{
 
     render(){
         return(
+            <div>
             <div>{this.state.answerLook}</div>
-            
+            <CounterOfAnswers typedCharacter={this.props.newCharacter} correctString={this.props.answer}/>
+            </div>
         );
     }
 
 
-}
-
-class CounterOfMissings extends Component{
-    
 }
 
 export default TypedInLetters;
